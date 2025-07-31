@@ -95,7 +95,7 @@ const handleBack = () => {
 
 
   return (
-    <div className=" m-24 ">
+    <div className="m-4 md:m-24 ">
    <div className="mb-12">
     <h1 className="text-4xl font-bold text-center">Personalities Quiz </h1>
     <p className="text-center">Take the quiz and discover your personality type, in different situations!</p>
@@ -103,9 +103,9 @@ const handleBack = () => {
   <div>
         <div>
             <h2 className="text-2xl font-bold text-center"></h2>
-            <div className="mt-4 space-y-2 grid grid-cols-2">
+            <div className="mt-4 md:space-y-2 grid grid-cols-1 md:grid-cols-2">
                 {categories.options.map((option: string, index: number) => (
-                   <button key={index} className='hover:scale-105' onClick={() => handleChangeQuiz(index)} > <Card  className="p-4 m-4">
+                   <button key={index} className='hover:scale-105' onClick={() => handleChangeQuiz(index)} > <Card  className="p-6 items-center justify-center m-4">
                         <CardTitle >{option}</CardTitle>
                         {/* <CardDescription>
                         {categories.descriptions[index]}

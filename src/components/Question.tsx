@@ -30,9 +30,9 @@ const Question: React.FC<QuestionProps> = ({ question, options, onOptionClick })
             <h2 className="text-2xl font-bold text-center">{question}</h2>
             <div className="mt-4 space-y-2">
                 {options.map((option, index) => (
-                    <Button key={index} name={option.value} variant="outline" className={`w-full ${selectedOption === option.value ? 'bg-blue-500 hover:bg-blue-500 hover:text-white text-white' : ''}`} onClick={() => handleOptionClick(option.value)}>
+                    <div key={index} name={option.value} variant="outline" className={` text-center outline p-4 shadow-sm rounded w-full ${selectedOption === option.value ? 'bg-blue-500 hover:bg-blue-500 hover:text-white text-white' : ''}`} onClick={() => handleOptionClick(option.value)}>
                         {option.text}
-                    </Button>
+                    </div>
                 ))}
             </div>
           
