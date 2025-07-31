@@ -14,12 +14,29 @@ export const calculateMBTI = (answers: string[]) => {
     }
   });
 
+
+
   const type =
     (scores.E >= scores.I ? "E" : "I") +
     (scores.S >= scores.N ? "S" : "N") +
     (scores.T >= scores.F ? "T" : "F") +
     (scores.J >= scores.P ? "J" : "P");
 
-  return type;
+    const percentageE = (scores.E / (scores.E + scores.I)) * 100;
+    const percentageS = (scores.S / (scores.S + scores.N)) * 100;
+    const percentageT = (scores.T / (scores.T + scores.F)) * 100;
+    const percentageJ = (scores.J / (scores.J + scores.P)) * 100
+
+    const percentages = {
+        E: percentageE,
+        S: percentageS,
+        T: percentageT,
+        J: percentageJ
+    }
+
+  return {
+    type,
+    percentages
+  };
 };
 
